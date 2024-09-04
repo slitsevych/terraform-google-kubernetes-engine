@@ -35,7 +35,7 @@ provider "kubernetes" {
 
 module "gke" {
   source  = "terraform-google-modules/kubernetes-engine/google//modules/beta-autopilot-private-cluster"
-  version = "~> 31.0"
+  version = "~> 32.0"
 
   project_id                      = var.project_id
   name                            = "${local.cluster_type}-cluster"
@@ -51,11 +51,4 @@ module "gke" {
   enable_private_nodes            = true
   network_tags                    = [local.cluster_type]
   deletion_protection             = false
-
-  master_authorized_networks = [
-    {
-      cidr_block   = "10.60.0.0/17"
-      display_name = "VPC"
-    },
-  ]
 }

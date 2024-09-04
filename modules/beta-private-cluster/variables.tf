@@ -463,7 +463,7 @@ variable "enable_private_endpoint" {
 variable "enable_private_nodes" {
   type        = bool
   description = "Whether nodes have internal IP addresses only"
-  default     = false
+  default     = true
 }
 
 variable "master_ipv4_cidr_block" {
@@ -898,7 +898,7 @@ variable "sandbox_enabled" {
 
 variable "enable_gcfs" {
   type        = bool
-  description = "Enable image streaming on cluster level."
+  description = "(Beta) Enable image streaming on cluster level."
   default     = false
 }
 

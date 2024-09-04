@@ -279,7 +279,7 @@ variable "enable_private_endpoint" {
 variable "enable_private_nodes" {
   type        = bool
   description = "Whether nodes have internal IP addresses only"
-  default     = false
+  default     = true
 }
 
 variable "master_ipv4_cidr_block" {
@@ -522,6 +522,12 @@ variable "enable_l4_ilb_subsetting" {
   type        = bool
   description = "Enable L4 ILB Subsetting on the cluster"
   default     = false
+}
+
+variable "enable_gcfs" {
+  type        = bool
+  description = "(Beta) Enable image streaming on cluster level."
+  default     = null
 }
 
 variable "allow_net_admin" {
