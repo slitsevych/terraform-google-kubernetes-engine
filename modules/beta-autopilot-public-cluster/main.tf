@@ -77,6 +77,7 @@ locals {
   cluster_output_regional_zones = google_container_cluster.primary.node_locations
   cluster_output_zones          = local.cluster_output_regional_zones
 
+  cluster_endpoint_dns       = google_container_cluster.primary.control_plane_endpoints_config[0].dns_endpoint_config[0].endpoint
   cluster_endpoint           = google_container_cluster.primary.endpoint
   cluster_endpoint_for_nodes = "${google_container_cluster.primary.endpoint}/32"
 

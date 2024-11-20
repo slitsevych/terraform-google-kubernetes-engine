@@ -52,6 +52,12 @@ output "endpoint" {
   value       = module.gke.endpoint
 }
 
+output "endpoint_dns" {
+  sensitive   = true
+  description = "Cluster endpoint DNS"
+  value       = module.gke.endpoint_dns
+}
+
 output "min_master_version" {
   description = "Minimum master kubernetes version"
   value       = module.gke.min_master_version
