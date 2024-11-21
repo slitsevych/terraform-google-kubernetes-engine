@@ -472,6 +472,12 @@ variable "enable_private_endpoint" {
   default     = false
 }
 
+variable "enable_dns_endpoint" {
+  type        = bool
+  description = "Whether the DNS Endpoint is enabled"
+  default     = false
+}
+
 variable "enable_private_nodes" {
   type        = bool
   description = "Whether nodes have internal IP addresses only"
