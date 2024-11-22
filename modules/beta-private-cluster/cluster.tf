@@ -222,6 +222,7 @@ resource "google_container_cluster" "primary" {
         content {
           cidr_block   = lookup(cidr_blocks.value, "cidr_block", "")
           display_name = lookup(cidr_blocks.value, "display_name", "")
+          private_endpoint_enforcement_enabled = var.private_endpoint_enforcement_enabled
         }
       }
     }

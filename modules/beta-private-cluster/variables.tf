@@ -81,7 +81,13 @@ variable "master_authorized_networks" {
 variable "gcp_public_cidrs_access_enabled" {
   type        = bool
   description = "Allow access through Google Cloud public IP addresses"
-  default     = null
+  default     = false
+}
+
+variable "private_endpoint_enforcement_enabled" {
+  type        = bool
+  description = "private_endpoint_enforcement_enabled"
+  default     = false
 }
 
 variable "enable_vertical_pod_autoscaling" {
