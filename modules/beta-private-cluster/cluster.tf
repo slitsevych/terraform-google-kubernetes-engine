@@ -217,12 +217,12 @@ resource "google_container_cluster" "primary" {
     for_each = var.enable_private_endpoint || var.gcp_public_cidrs_access_enabled != null || length(var.master_authorized_networks) > 0 ? [true] : []
     content {
       gcp_public_cidrs_access_enabled = var.gcp_public_cidrs_access_enabled
+      private_endpoint_enforcement_enabled = var.private_endpoint_enforcement_enabled
       dynamic "cidr_blocks" {
         for_each = var.master_authorized_networks
         content {
           cidr_block   = lookup(cidr_blocks.value, "cidr_block", "")
           display_name = lookup(cidr_blocks.value, "display_name", "")
-          private_endpoint_enforcement_enabled = var.private_endpoint_enforcement_enabled
         }
       }
     }
